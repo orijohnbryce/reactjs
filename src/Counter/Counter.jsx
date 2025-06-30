@@ -4,8 +4,6 @@ import ImageSwapper from '../ImageSwapper/ImageSwapper'
 const Counter = () => {
 
     console.log("Counter rendered!");
-
-
     const [count, setCount] = React.useState(0)
     return (
         <>
@@ -13,8 +11,7 @@ const Counter = () => {
             <div>Counter: {count} </div>
             <button onClick={() => { setCount(count - 1) }}> - </button>
 
-            <ImageSwapper num={count} setCount={setCount}/>
-            
+            {count !== 3 && <ImageSwapper num={count} setCount={setCount} />}
         </>
 
     )
