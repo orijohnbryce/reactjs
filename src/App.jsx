@@ -1,12 +1,13 @@
 import './App.css'
+import Counter from './Counter/Counter'
 
-function App() {  
+function App() {
 
-  return (
-    <>
-    <h1> React Minimal App</h1>
-    </>
-  )
+    return (
+        <>
+            <Counter/>            
+        </>
+    )
 }
 
 export default App
