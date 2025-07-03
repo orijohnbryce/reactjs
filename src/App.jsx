@@ -1,10 +1,13 @@
 import './App.css'
+import Ex1 from './Ex1/Ex1'
 
 function App() {  
 
+    
+
   return (
     <>
-    <h1> React Minimal App</h1>
+    <Ex1/>
     </>
   )
 }
