@@ -1,12 +1,15 @@
 import './App.css'
+import Login from './ex1/Login'
+import SmartForm from './SmartForm/SmartForm'
 
-function App() {  
+function App() {
 
-  return (
-    <>
-    <h1> React Minimal App</h1>
-    </>
-  )
+    return (
+        <>
+            {/* <Login /> */}
+            <SmartForm/>
+        </>
+    )
 }
 
 export default App
