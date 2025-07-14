@@ -1,0 +1,17 @@
+#content-wrapper-container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 90%;
+    height: 100vh;
+}
+#links-container {
+    height: 30%;
+    width: 15%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#content-container {
+    width: 80%;
+}
