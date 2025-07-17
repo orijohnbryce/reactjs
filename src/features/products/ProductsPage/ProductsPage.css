@@ -1,0 +1,4 @@
+.p-row {}
+.p-row:hover {
+    cursor: pointer;
+}

@@ -18,7 +18,7 @@ function App() {
             const token = localStorage.getItem("token");
             const decodedToken = jwtDecode(token)
             setUsername(decodedToken.user.firstName);
-            console.log(decodedToken);            
+            console.log(decodedToken);
             nav("/home")
         }
     }, [isLogged])
@@ -48,22 +48,22 @@ function App() {
         localStorage.removeItem("token");
         setIsLogged(false);
         nav("/login")
-    }    
+    }
 
     return (
-        <>        
-        <Link to={"/login"}>  Login </Link>
-        <br/>
-        <Link to={"/register"}>  Register </Link>
+        <>
+            <button onClick={() => { nav(-1) }}> Back </button>
+            <Link to={"/login"}>  Login </Link>
+            <br />
+            <Link to={"/register"}>  Register </Link>
+            <br />
+            <Link to={"/products"}>  Products </Link>
 
-        <SiteRoutes onSuccess={() => { setIsLogged(true) }}/>
-        {isLogged && <p> Welcome {username}
-            <button onClick={handleLogout}> Logout! </button>
-        </p>}
-            
-            {/* 
-            <Register onSuccess={() => { setIsLogged(true) }} />
-            <Login onSuccess={() => { setIsLogged(true) }} /> */}
+            <SiteRoutes onSuccess={() => { setIsLogged(true) }} isLogged={isLogged} />
+            {isLogged && <p> Welcome {username}
+                <button onClick={handleLogout}> Logout! </button>
+            </p>}
+
         </>
     )
 }
