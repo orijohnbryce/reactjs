@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import './App.css'
 import Login from './features/auth/Login/Login'
 import Register from './features/auth/Register/Register'
@@ -8,13 +8,14 @@ import SiteRoutes from './app/SiteRoutes';
 import { Link, useNavigate } from 'react-router-dom';
 import NavBar from './features/layout/NavBar/NavBar';
 
+export const AppContext = createContext()
+
 function App() {
+    const nav = useNavigate();
+
     const [isLogged, setIsLogged] = useState(false);
     const [username, setUsername] = useState("")
-
     const [cart, setCart] = useState([])  // [{data, amount}, {..}]
-
-    const nav = useNavigate();
 
     useEffect(() => {
         if (isLogged) {
@@ -54,14 +55,16 @@ function App() {
     }
 
     return (
-        <>            
-            <NavBar isLogged={isLogged} username={username} handleLogout={handleLogout}/>
-            <SiteRoutes 
-                onSuccess={() => { setIsLogged(true) }} 
-                isLogged={isLogged} 
-                cart={cart}
-                setCart={setCart}
+        <>
+            <AppContext.Provider value={{isLogged, setIsLogged, username, cart, setCart}}>
+                <NavBar handleLogout={handleLogout} cart={cart} />
+                <SiteRoutes
+                    onSuccess={() => { setIsLogged(true) }}
+                    isLogged={isLogged}
+                    cart={cart}
+                    setCart={setCart}
                 />
+            </AppContext.Provider>
         </>
     )
 }

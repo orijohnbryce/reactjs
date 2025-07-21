@@ -1,10 +1,14 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
+import { useContext } from "react";
+import { AppContext } from "../../../App";
 
 
-const NavBar = ({isLogged, username, handleLogout}) => {
+const NavBar = ({ handleLogout }) => {
 
     const nav = useNavigate();
+    
+    const {isLogged, username, cart} = useContext(AppContext)
 
     return (
         <div id='nav-bar-container'>
@@ -13,6 +17,7 @@ const NavBar = ({isLogged, username, handleLogout}) => {
             {!isLogged && <Link to={"/register"}>  Register </Link>}
             <Link to={"/products"}>  Products </Link>
             <Link to={"/home"}>  Home </Link>
+            <Link to={"/cart"}>  cart  ({cart?.length}) </Link>
 
             {isLogged && <p> Welcome {username}
                 <button onClick={handleLogout}> Logout! </button>

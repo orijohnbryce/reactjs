@@ -1,0 +1,10 @@
+.clickable:hover {
+    cursor: pointer;
+}
+
+button:hover {cursor: pointer;}
+button {
+    border: 0px;
+    margin: 2px 5px;
+    font-weight: 700;
+}
