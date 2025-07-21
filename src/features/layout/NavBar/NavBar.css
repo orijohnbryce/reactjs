@@ -1,0 +1,8 @@
+#nav-bar-container {
+    width: 100% ;
+    display: flex;
+    background-color: aqua;
+    padding: 5%;
+    align-items: center;
+    justify-content: space-evenly;
+}

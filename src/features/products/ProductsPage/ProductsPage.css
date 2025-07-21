@@ -1,4 +1,6 @@
-.p-row {}
+.p-row {
+    margin: 3%;
+}
 .p-row:hover {
     cursor: pointer;
 }

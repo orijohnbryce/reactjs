@@ -6,10 +6,13 @@ import { isTokenValid } from './features/auth/authApi';
 import { jwtDecode } from "jwt-decode"
 import SiteRoutes from './app/SiteRoutes';
 import { Link, useNavigate } from 'react-router-dom';
+import NavBar from './features/layout/NavBar/NavBar';
 
 function App() {
     const [isLogged, setIsLogged] = useState(false);
     const [username, setUsername] = useState("")
+
+    const [cart, setCart] = useState([])  // [{data, amount}, {..}]
 
     const nav = useNavigate();
 
@@ -51,19 +54,14 @@ function App() {
     }
 
     return (
-        <>
-            <button onClick={() => { nav(-1) }}> Back </button>
-            <Link to={"/login"}>  Login </Link>
-            <br />
-            <Link to={"/register"}>  Register </Link>
-            <br />
-            <Link to={"/products"}>  Products </Link>
-
-            <SiteRoutes onSuccess={() => { setIsLogged(true) }} isLogged={isLogged} />
-            {isLogged && <p> Welcome {username}
-                <button onClick={handleLogout}> Logout! </button>
-            </p>}
-
+        <>            
+            <NavBar isLogged={isLogged} username={username} handleLogout={handleLogout}/>
+            <SiteRoutes 
+                onSuccess={() => { setIsLogged(true) }} 
+                isLogged={isLogged} 
+                cart={cart}
+                setCart={setCart}
+                />
         </>
     )
 }
