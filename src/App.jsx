@@ -56,14 +56,9 @@ function App() {
 
     return (
         <>
-            <AppContext.Provider value={{isLogged, setIsLogged, username, cart, setCart}}>
+            <AppContext.Provider value={{ isLogged, setIsLogged, username, cart, setCart }}>
                 <NavBar handleLogout={handleLogout} cart={cart} />
-                <SiteRoutes
-                    onSuccess={() => { setIsLogged(true) }}
-                    isLogged={isLogged}
-                    cart={cart}
-                    setCart={setCart}
-                />
+                <SiteRoutes />
             </AppContext.Provider>
         </>
     )
