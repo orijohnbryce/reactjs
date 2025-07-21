@@ -7,6 +7,7 @@ import { jwtDecode } from "jwt-decode"
 import SiteRoutes from './app/SiteRoutes';
 import { Link, useNavigate } from 'react-router-dom';
 import NavBar from './features/layout/NavBar/NavBar';
+import LoadingButton from './components/LoadingButton/LoadingButton';
 
 export const AppContext = createContext()
 
@@ -57,6 +58,17 @@ function App() {
     return (
         <>
             <AppContext.Provider value={{ isLogged, setIsLogged, username, cart, setCart }}>
+
+
+                <LoadingButton onClick={()=>{}} > 
+                    רענן נתונים 
+                </LoadingButton>
+                
+                <LoadingButton onClick={()=>{}} loadingText={"..טוען"}> 
+                    טען מוצרים
+                </LoadingButton>
+
+
                 <NavBar handleLogout={handleLogout} cart={cart} />
                 <SiteRoutes />
             </AppContext.Provider>

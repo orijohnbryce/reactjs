@@ -1,0 +1,8 @@
+.loading-btn-container {
+    border: 1px solid black;    
+    padding: 2px;
+    margin: 5px;
+    display: inline-block;
+    width: 120px;    
+    text-align: center;
+}
