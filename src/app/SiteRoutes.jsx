@@ -5,6 +5,7 @@ import Register from '../features/auth/Register/Register'
 import Home from '../features/home/Home'
 import ProductsPage from '../features/products/ProductsPage/ProductsPage'
 import SingleProduct from '../features/products/SingleProduct/SingleProduct'
+import CartPage from '../features/cart/CartPage/CartPage'
 
 const SiteRoutes = () => {
   return (
@@ -12,9 +13,9 @@ const SiteRoutes = () => {
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register />} />        
         <Route path='/home' element={<Home/>} />        
+        <Route path='/cart' element={<CartPage/>} />        
         <Route path='/' element={<Home/>} />        
-        {isLogged && <Route path='/products' element={<ProductsPage/>} />}
-        {!isLogged && <Route path='/products' element={<p>You must be logged it to see products</p>} />}
+        <Route path='/products' element={<ProductsPage/>} />        
         <Route path='/product/:id' element={<SingleProduct/>} />        
         <Route path='*' element={<p> Route Not Found  </p>} />        
     </Routes>

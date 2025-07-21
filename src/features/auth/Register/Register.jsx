@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import "./Register.css"
 import { register as myRegister } from '../authApi'
+import { AppContext } from '../../../App'
 
-const Register = ({onSuccess}) => {
+const Register = () => {
 
+    const {setIsLogged} = useContext(AppContext)
     const { register, handleSubmit } = useForm({
         defaultValues: {
             firstName: "",
@@ -18,7 +20,7 @@ const Register = ({onSuccess}) => {
         try {
             const res = await myRegister(data);
             localStorage.setItem("token", res.data)
-            onSuccess();
+            setIsLogged(true);
             
         } catch (error) {
             console.log(error);

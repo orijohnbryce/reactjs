@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./SingleProduct.css"
 import { useParams } from 'react-router-dom'
 import { fetchSingleProduct } from '../productsApi'
+import { AppContext } from '../../../App'
 
 const SingleProduct = () => {
     const [product, setProduct] = useState()
     const params = useParams()
+
+    const {cart, setCart} = useContext(AppContext);
 
     useEffect(() => {
         fetchSingleProduct(params.id).then((p) => {

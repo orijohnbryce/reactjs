@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { login } from '../authApi';
+import { AppContext } from '../../../App';
 
 const Login = ({onSuccess}) => {
     const [email, setEmail] = useState();
     const [pw, setPw] = useState();
+
+    const {setIsLogged} = useContext(AppContext)
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -13,7 +16,7 @@ const Login = ({onSuccess}) => {
                 password: pw,
             })
             localStorage.setItem("token", token);
-            onSuccess();
+            setIsLogged(true);
         } catch (error) {
             console.log(error);
             alert("error, retry later");
