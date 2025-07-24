@@ -1,11 +1,9 @@
 import { createContext, useEffect, useState } from 'react'
 import './App.css'
-import Login from './features/auth/Login/Login'
-import Register from './features/auth/Register/Register'
 import { isTokenValid } from './features/auth/authApi';
 import { jwtDecode } from "jwt-decode"
 import SiteRoutes from './app/SiteRoutes';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NavBar from './features/layout/NavBar/NavBar';
 import LoadingButton from './components/LoadingButton/LoadingButton';
 
@@ -60,13 +58,13 @@ function App() {
             <AppContext.Provider value={{ isLogged, setIsLogged, username, cart, setCart }}>
 
 
-                <LoadingButton onClick={()=>{}} > 
+                {/* <LoadingButton onClick={()=>{}} > 
                     רענן נתונים 
                 </LoadingButton>
                 
                 <LoadingButton onClick={()=>{}} loadingText={"..טוען"}> 
                     טען מוצרים
-                </LoadingButton>
+                </LoadingButton> */}
 
 
                 <NavBar handleLogout={handleLogout} cart={cart} />

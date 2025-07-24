@@ -2,13 +2,17 @@ import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 import { useContext } from "react";
 import { AppContext } from "../../../App";
+import { useSelector } from "react-redux";
+import { selectCart } from "../../../app/redux/cartSelectors";
 
 
 const NavBar = ({ handleLogout }) => {
 
     const nav = useNavigate();
     
-    const {isLogged, username, cart} = useContext(AppContext)
+    const {isLogged, username} = useContext(AppContext)
+
+    const cart = useSelector(selectCart);
 
     return (
         <div id='nav-bar-container'>
