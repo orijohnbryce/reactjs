@@ -1,1 +1,1 @@
-export const selectCart = (state)=>state.cart.cart;
+export const selectCart = (state) => state.cart.cart;

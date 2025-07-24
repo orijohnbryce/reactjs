@@ -1,0 +1,1 @@
+export const selectDarkmode = (state) => state.darkmode.isDark;
