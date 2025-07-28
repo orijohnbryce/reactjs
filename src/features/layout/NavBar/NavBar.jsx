@@ -9,6 +9,7 @@ import { toggleDarkmode } from "../../../app/redux/darkmodeSlice";
 import arrowIcon from "../../../media/icons/back-arrow.png"
 import { useTranslation } from "react-i18next";
 import LangSelector from "../../../components/LangSelector/LangSelector";
+import BsNavBar from "../BsNavBar/BsNavBar";
 
 const NavBar = ({ handleLogout }) => {
     
@@ -26,7 +27,7 @@ const NavBar = ({ handleLogout }) => {
     }
     console.log(isDark);
     
-
+    return <BsNavBar/>
 
     return (
         <div id='nav-bar-container' style={{"backgroundColor": isDark ? "black" : "white" }}>
@@ -39,7 +40,7 @@ const NavBar = ({ handleLogout }) => {
             <Link to={"/home"}>  Home </Link>
             <Link to={"/cart"}>  cart  ({cart?.length}) </Link>
 
-            {isLogged && <p> 
+            {isLogged && <p className="only-pc"> 
                 {t("welcome-person", {name: username})}
                 {/* {t("welcome")} {username} */}
                 <button onClick={handleLogout}> Logout! </button>

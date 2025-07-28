@@ -1,3 +1,7 @@
+:root {
+    --color1: rgb(80, 207, 194);
+}
+
 .clickable:hover {
     cursor: pointer;
 }
@@ -6,7 +10,10 @@
     background-color: black;
 }
 
-button:hover {cursor: pointer;}
+button:hover {
+    cursor: pointer;
+}
+
 button {
     border: 0px;
     margin: 2px 5px;
@@ -14,22 +21,30 @@ button {
 }
 
 .spinner {
-  border: 6px solid #f3f3f3; /* Light grey */
-  border-top: 6px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 5px;
-  height: 5px;
-  animation: spin 2s linear infinite;
+    border: 6px solid #f3f3f3;
+    /* Light grey */
+    border-top: 6px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .icon {
     width: 20px;
 }
+
 .icon-l {
     width: 40px;
 }
@@ -43,10 +58,31 @@ button {
 
 
 .cool-text {
-  font-family: "Roboto";
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    /* color: var(--color1); */
+    color: red;
+    font-family: "Roboto";    
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+
+.only-pc {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .only-pc {
+        display: none !important;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+}
+
+.my-btn {
+    background-color: green !important;
 }

@@ -3,7 +3,8 @@ import "./ProductCard.css"
 
 const ProductCard = ({children}) => {
   return (
-    <div className='product-card-container'>
+    // <div className='product-card-container'>
+    <div>
         {children}        
     </div>
   )

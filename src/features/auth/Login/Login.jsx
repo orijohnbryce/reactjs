@@ -4,6 +4,8 @@ import { AppContext } from '../../../App';
 import LoadingButton from '../../../components/LoadingButton/LoadingButton';
 import { useTranslation } from 'react-i18next';
 
+import "./Login.css"
+
 const Login = ({onSuccess}) => {
     const {setIsLogged} = useContext(AppContext)
     const {t} = useTranslation();
@@ -35,7 +37,7 @@ const Login = ({onSuccess}) => {
                 <input type='password' required placeholder={t('password')}
                     value={pw} onChange={(e) => { setPw(e.target.value) }} />
 
-                <button> {t('login')} </button>
+                <button className='login-btn'> {t('login')} </button>
             </form>                
         </div>
     )

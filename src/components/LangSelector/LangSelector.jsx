@@ -11,7 +11,6 @@ const LangSelector = () => {
                 value={i18n.language}
                 onChange={(e) => i18n.changeLanguage(e.target.value)}
             >
-
                 <option value="en">English</option>
                 <option value="he">עברית</option>
                 <option value="pt">Portuguese</option>
