@@ -66,7 +66,7 @@ function App() {
                     טען מוצרים
                 </LoadingButton> */}
 
-
+                <h1 className='cool-text'> Northwind Trades </h1>
                 <NavBar handleLogout={handleLogout} cart={cart} />
                 <SiteRoutes />
             </AppContext.Provider>
