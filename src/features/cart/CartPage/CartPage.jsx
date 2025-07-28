@@ -4,6 +4,7 @@ import "./CartPage.css"
 import ProductCard from '../../products/ProductCard/ProductCard';
 import { useSelector } from 'react-redux';
 import { selectCart } from '../../../app/redux/cartSelectors';
+import cartIcon from "../../../media/icons/cart.png"
 
 const CartPage = () => {
 
@@ -12,6 +13,7 @@ const CartPage = () => {
 
     return (
         <div>
+            <img className='icon-l' src={cartIcon} alt='icon'/>
             {cart.map((p) => 
             <ProductCard key={p.id}>
                 <div id='cart-page-single-product-container'>

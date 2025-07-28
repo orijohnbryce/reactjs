@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../../app/redux/cartSelectors";
 import { selectDarkmode } from "../../../app/redux/darkmodeSelectors";
 import { toggleDarkmode } from "../../../app/redux/darkmodeSlice";
-
+import arrowIcon from "../../../media/icons/back-arrow.png"
 
 const NavBar = ({ handleLogout }) => {
 
@@ -25,7 +25,9 @@ const NavBar = ({ handleLogout }) => {
     
     return (
         <div id='nav-bar-container' style={{"backgroundColor": isDark ? "black" : "white" }}>
-            <button onClick={() => { nav(-1) }}> Back </button>
+            <button className="back-btn" onClick={() => { nav(-1) }}> 
+                <img className="icon" src={arrowIcon}/>
+                Back </button>
             {!isLogged && <Link to={"/login"}>  Login </Link>            }
             {!isLogged && <Link to={"/register"}>  Register </Link>}
             <Link to={"/products"}>  Products </Link>
