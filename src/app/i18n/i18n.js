@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 
 import en from "./en.json"
 import he from "./he.json"
+import pt from "./pt.json"
 
 i18n
     .use(LanguageDetector)
@@ -12,6 +13,7 @@ i18n
         resources: {
             en: { translation: en },
             he: { translation: he },
+            pt: { translation: pt },
         },
         fallback: "en",
 

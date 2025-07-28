@@ -14,6 +14,7 @@ const LangSelector = () => {
 
                 <option value="en">English</option>
                 <option value="he">עברית</option>
+                <option value="pt">Portuguese</option>
             </select>
         </div>
     )

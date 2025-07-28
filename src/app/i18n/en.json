@@ -1,4 +1,7 @@
 {
     "welcome": "welcome back",
-    "bye": "see you later"
+    "bye": "see you later",
+    "login": "Login",
+    "email": "enter email",
+    "password": "enter password"
 }
